@@ -75,7 +75,7 @@
         ['chapman', ['palin', 'cleese']]
     #for循环只打印了外列表，因为内列表也只是外列表的一个列表项，需要打印内列表，要采取新的机制
 
-    在列表中查找列表，采用if...else...模式，主义代码组缩进格式以及if和else后面的冒号。
+    在列表中查找列表，采用if...else...模式，主义代码组缩进格式以及if和else后面的冒号。每个if都必须有一个else与之关联
     if 某个条件满足 ：
       "true"组
     else：
@@ -104,3 +104,30 @@
                91
                chapman
                ['palin', 'cleese'] #依然不能完整显示
+      继续嵌套：
+      eg：>>> for aa in moives:
+	               if isinstance(aa,list):
+		                  for ab in aa:
+			                       if isinstance(ab,list):
+				                          for ac in ab:
+					                               print(ac)
+			                       else: print(ab)
+	               else:print(aa)
+
+
+                 grail
+                 1975
+                 gilliam
+                 91
+                 chapman
+                 palin
+                 cleese
+
+      TIPS:一般来讲过于复杂的代码几乎不好，for is嵌套太多！不要重复代码：应当创建一个函数
+
+      在python中创建一个函数：使用def语句定义python函数，标准形式如下：
+      def 函数名（参数）：
+        函数代码组
+      #1、函数代码组必须在def语句下面缩进
+       2、参数是可选的，但括号一定要带
+       3、括号后要带冒号
