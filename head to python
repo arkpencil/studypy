@@ -36,3 +36,71 @@
     #两种区别在于前一种知道数据项，直接删除，后一种不知道数据项，根据位置进行删除
 
     在列表中某个特定位置前插入一个数据项，使用insert()方法，具体为：movies.insert(0，‘ZZZZ’)
+
+    #python列表可以混合不类型的数据#
+
+     处理列表数据：迭代
+     for:for循环是可伸缩的，适用于任意大小的列表
+     具体如下：for 目标标识符 in 列表 ： 列表处理代码。eg:for aa in movies:print(aa)
+      #列表处理代码称为组，suite#
+
+    while:使用while循环时必须考虑“状态信息”，要求使用一个计数标识符
+      eg: count = 0
+          while count < len(movies):
+            print(movies[count])
+            count =count+1
+
+        TIPS:1、迭代处理除非有特殊理由必须用while，否则一般使用for循环，避免“大小差1”的错误
+
+             2、python列表不支持越界检查
+
+             3、标识符可以以一个字母或下划线开头，且python属于大小写敏感
+
+             4、BIF，BUILT-IN FUNCTION，内置函数的意思
+
+    在列表中存储列表（列表嵌套）
+    eg:moives = ['grail',1975,'gilliam',91,['chapman',['palin','cleese']]]
+       print(moives[4][1][1])
+       cleese
+
+    An IDLE Session
+    for ab in moives:
+      print(ab)
+
+
+        grail
+        1975
+        gilliam
+        91
+        ['chapman', ['palin', 'cleese']]
+    #for循环只打印了外列表，因为内列表也只是外列表的一个列表项，需要打印内列表，要采取新的机制
+
+    在列表中查找列表，采用if...else...模式，主义代码组缩进格式以及if和else后面的冒号。
+    if 某个条件满足 ：
+      "true"组
+    else：
+      “false”组
+
+        #isinstance()函数允许检查某个特定标识符是否包含某个特定类型的数据
+        eg:>>>name = ['aaa','bbb']   #定义name列表
+           >>>isinstance(name,list)  #使用函数判断name是不是列表类型，list指一个python类型，在此处，类型为list
+              True
+           >>> num_name = len(name)  #定义num_name
+           >>> isinstance(num_name,list)  #判断num_name是不是列表
+              False
+
+    利用if...else...和isinstance()改进for循环，将数据罗列：
+    eg:>>> for aa in moives:
+	           if isinstance(aa,list):
+		            for ab in aa:
+			             print(ab)
+	           else:
+		           print(aa)
+
+
+               grail
+               1975
+               gilliam
+               91
+               chapman
+               ['palin', 'cleese'] #依然不能完整显示
