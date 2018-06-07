@@ -14,3 +14,25 @@
 
   列表的数组项是从0开始的，即0，1，2，3，4...
   如输入：print(movies[1])，显示的则是:BBB
+
+  An IDLE Session
+
+    print(len(movies))
+    print(movies[1]))
+    #对一个函数再嵌套一个函数是可以的#
+
+    #python里单引号和双引号的使用区别，参考https://blog.csdn.net/woainishifu/article/details/76105667#
+    当你用单引号' '定义字符串的时候，它就会认为你字符串里面的双引号" "是普通字符，从而不需要转义。\n
+    反之当你用双引号定义字符串的时候，就会认为你字符串里面的单引号是普通字符无需转义
+
+    创建列表后，可以再列表末尾增加一个数据项，使用append()方法
+    #函数名记忆方法：末尾end，增加app（add\plus）#
+
+    从末尾删除一个数据项，使用pop()方法，括号里不用输入，直接删除最后一项
+
+    在列表末尾增加一个数据项,使用extend()方法，如moives.extend(['ddd',"eee"])
+
+    在列表中删除特定的某个数据项，使用remove()方法，具体为：movies.remove('ccc')或movies.remove(movies['4'])
+    #两种区别在于前一种知道数据项，直接删除，后一种不知道数据项，根据位置进行删除
+
+    在列表中某个特定位置前插入一个数据项，使用insert()方法，具体为：movies.insert(0，‘ZZZZ’)
