@@ -1,3 +1,33 @@
 #从外部获取数据
 
 都是文本行的情况，使用open()函数，与for循环结合
+
+>>> import os #导入os模块
+>>> os.getcwd() #查看当前目录
+>>> os.chdir('F:\headfirstpython\chapter3') #切换工作目录
+
+>>> data = open('sketch.txt')
+>>> print(data.readline(),end='')
+Man: Is this the right room for an argument?
+>>> print(data.readline(),end='')
+Other Man: I've told you once.
+>>> data.seek(0)
+0
+>>> for each_line in data:
+	print(each_line,end='')
+
+>>> data.close() #处理完文件一定要关闭
+
+处理数据，使用split()函数，split分开分解
+
+data = open('sketch.txt')
+for each_line in data:
+  if not each_line.find(':') == -1:
+    (role,line_spoken) = each_line.split(':',1)
+    print(role,end='')
+    print('said:',end='')
+    print(line_spoken,end='')
+
+data.close()
+
+#处理异常
