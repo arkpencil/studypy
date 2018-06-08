@@ -24,3 +24,11 @@
     3、构建一个发布文件,进入到需要发布的文件目录,终端运行python3 setup.py sdist
     4、将发布安装到本地副本，终端运行python3 setup.py install
     5、使用import导入模块并使用
+
+使用函数时，要采用 模块名.函数名（）的格式进行采用。命名空间名错误
+
+TIPS:使用一个普通的import语句时，如import nester，会指示python解释器允许你使用命名空间限定来访问nester函数。
+     不过更为特定的，如果使用from nester import print_lol，则会把指定的函数（这里就是print_lol）增加到当前命名空间，就不需要再使用命名空间限定。不过如果命名空间里已经存在print_lol，使用这种特定语句，会覆盖原来的print_lol语句
+
+     6、注册PyPI网站
+     7、向PyPI上传代码
