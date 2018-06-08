@@ -1,0 +1,26 @@
+#函数转换为模块，对模块的主要要求就是文件名以.py结尾
+
+  将函数保存到一个以.py结尾的文件中，即可将函数转换为模块
+
+  python包索引（python package index,pypi）为第三方python模块提供了一个集中的存储库。可以使用pypi发布自己的模块
+
+  在python中常用三重引号来表示注释""" """,进行多行注释，也可以直接在行头使用#
+
+发布模块
+
+   1、为模块创建一个文件夹
+   2、在新文件夹中创建一个setup.py的文件，，编辑setup.py文件
+      from distutils.core import setup #从python发布工具中导入setup函数
+      setup(
+              name         =
+              version      =
+              py_modules   =
+              author       =
+              author_email =
+              url          =
+              description  =
+              #.....等等
+            )
+    3、构建一个发布文件,进入到需要发布的文件目录,终端运行python3 setup.py sdist
+    4、将发布安装到本地副本，终端运行python3 setup.py install
+    5、使用import导入模块并使用

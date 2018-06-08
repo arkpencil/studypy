@@ -1,5 +1,3 @@
-第一章：初识python（人人都爱列表）
-
   #为了降低处理复杂性，通常把数据组织成为列表#
 
   创建简单的python列表：movies = ["AAA","BBB","CCC"]
@@ -135,3 +133,11 @@
 #201806072342commit test for manjaro
 
 #明天要总结一下git的配置，在Linux、windows、macos下不同的配置，还有就是ATOM和github结合
+
+  def aa_lol(the_list):
+    for aa in the_list:
+      if isinstance(aa,list):
+        aa_lol(aa)
+      else:
+        print(aa)
+核心思想即采用了递归的思想！重点了解递归！
