@@ -32,3 +32,26 @@ TIPS:使用一个普通的import语句时，如import nester，会指示python�
 
      6、注册PyPI网站
      7、向PyPI上传代码
+
+#用额外的参数控制代码，python中代码缩进很重要！一定要按层次缩进代码
+
+#1>>> def print_lol(the_list,level=0):
+        for each_time in the_list:
+            if isinstance(each_time,list):
+                  print_lol(each_time,level+1)
+            else:
+                  for tab_stop in range(level):
+                    print("\t",end='')
+                  print(each_time)
+
+#2                  >>> def print_lol(the_list,indent=False,level=0):
+                  	for each_time in the_list:
+                  		if isinstance(each_time,list):
+                  			print_lol(each_time,indent,level+1)
+                  		else:
+                  			if indent:
+                  				for tab_stop in range(level):
+                  					print("\t",end='')
+                  		print(each_time)
+
+                      
